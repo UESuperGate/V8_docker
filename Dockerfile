@@ -2,7 +2,7 @@ FROM ubuntu:18.04
 
 WORKDIR /root
 
-RUN apt update && apt install -y git wget curl python2.7 && \
+RUN apt update && apt install -y gdb gcc git wget curl python2.7 && \
     ln /usr/bin/python2.7 /usr/bin/python && \
     git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git && \
     export PATH=$PATH:"/root/depot_tools" && \

@@ -2,7 +2,7 @@ FROM ubuntu:20.04
 
 WORKDIR /root
 
-RUN apt update && apt install -y git && \
+RUN apt update && apt install -y git wget curl && \
     git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git && \
     export PATH=$PATH:"/root/depot_tools" && \
     fetch v8 && cd v8 && git checkout bdaa7d66a3 && gclient sync && \

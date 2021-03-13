@@ -15,6 +15,8 @@ RUN wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/downloa
 
 CMD [ "exec", "gosu", "v8er", "/root/v8/build/install-build-deps.sh" ]
 
+WORKDIR /root/v8
+
 RUN git checkout bdaa7d66a3 && \
     gclient sync && \
     tools/dev/gm.py x64.debug

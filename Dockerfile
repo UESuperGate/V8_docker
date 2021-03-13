@@ -17,6 +17,7 @@ CMD [ "exec", "gosu", "v8er", "/root/v8/build/install-build-deps.sh" ]
 
 WORKDIR /root/v8
 
-RUN git checkout bdaa7d66a3 && \
+RUN export PATH=$PATH:"/root/depot_tools" && \
+    git checkout bdaa7d66a3 && \
     gclient sync && \
     tools/dev/gm.py x64.debug
